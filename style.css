@@ -1,0 +1,114 @@
+/* Reset and Common Styles */
+*{
+  margin:0;
+  padding:0;
+  outline:none;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: jost,sans-serif;
+  font-weight: 400;
+}
+html{
+    font-size:62.5%; 
+    /* now 1rem = 10px but actually 1rem=16px. */
+}
+
+/* style declaration for section-1 */
+
+.section-1{
+    width:100%;
+    height:100vh;
+    background:url('images/bg.jpg')   center no-repeat;
+    display:flex; /* it becomes a flex container */
+    flex-direction: column; /* by default flex direction is row */
+    justify-content: center; /* horizontal alignment */
+    align-items: center;   /* vertical alignment */
+}
+
+.section-1-heading{
+    font-size:6rem;
+    font-weight:700;
+    color:#fff;
+    background-color: #e41c6f;
+    padding:0 3rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    border-bottom: .3rem solid #fff;
+    text-shadow: 0.2rem 0.2rem 0.2rem #555;
+    transform: skew(-10deg);
+}
+
+.person-img{
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+    border-radius:50%;
+    border:.7rem double #e41c6f;
+    padding:0.5rem;  
+}
+
+.person-name{
+    font-size: 2rem;
+    color:#fff;
+    background-color: #e41c6f;
+    margin: 5rem 0;
+    padding: .5rem 3rem;
+    letter-spacing: .3rem;
+    transform: skew(-10deg);
+}
+
+.section-1-btn{
+    font-size: 1.7rem;
+    font-weight: 700;
+    color:#333;
+    background-color: #fff;
+    border:.3rem solid #333;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+}
+
+/*section-1 styling is completed */
+
+/*navbar styling starts*/
+ .navbar{
+    width:100%;
+    height:4rem;
+    background-color: #e41c6f;
+    box-shadow:0.2rem 0.2rem 0.2rem #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .navbar-link{
+    font-size:1.8rem;
+    font-weight: 600;
+    color:#333;
+    margin:0 3rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    position:relative;
+    transition: color .2s;
+ }
+ .navbar-link::before{
+    content:"";
+    width:0;
+    height:0.2rem;
+    background-color: #fff;
+    position: absolute;
+    right:-15%;
+    bottom:-0.3rem;
+    transition: width .2s;
+ }
+ .navbar-link:hover::before{
+    width:130%;
+ }
+ .navbar-link:hover{
+    color:white;
+ }
+ 
+/*navbar styling ends*/
+
