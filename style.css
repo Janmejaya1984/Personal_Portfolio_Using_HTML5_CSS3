@@ -1,31 +1,33 @@
-/* Reset and Common Styles */
+/*Reset and common styles*/
+/* universal selector */
 *{
-  margin:0;
-  padding:0;
-  outline:none;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style-type: none;
-  font-family: jost,sans-serif;
-  font-weight: 400;
+   margin:0;
+   padding: 0;
+   outline: none;
+   box-sizing:border-box;
+   text-decoration: none;
+   list-style-type: none;
+   font-family: jost,sans-serif;
+   font-weight: 400;
 }
+/* 
+1rem = 16px; 
+Here I want to use 1 rem as 10px.
+*/
 html{
-    font-size:62.5%; 
-    /* now 1rem = 10px but actually 1rem=16px. */
+    font-size: 62.5%;
 }
-
-/* style declaration for section-1 */
-
+/* section-1 styling starts*/
 .section-1{
     width:100%;
     height:100vh;
-    background:url('images/bg.jpg')   center no-repeat;
-    display:flex; /* it becomes a flex container */
-    flex-direction: column; /* by default flex direction is row */
-    justify-content: center; /* horizontal alignment */
-    align-items: center;   /* vertical alignment */
+    background: url("images/bg.jpg") center no-repeat;
+    display: flex;/* Here yo have made the section-1 a flex container */
+    flex-direction:column;
+    justify-content: center;/* horizontal alignment */
+    align-items: center;/* vertical alignment */ 
+    /* To vertically and horizontally centered all the flex items */
 }
-
 .section-1-heading{
     font-size:6rem;
     font-weight:700;
@@ -35,25 +37,26 @@ html{
     margin-bottom: 5rem;
     text-transform: uppercase;
     letter-spacing: 1rem;
-    border-bottom: .3rem solid #fff;
+    border-bottom:.3rem solid #fff;
     text-shadow: 0.2rem 0.2rem 0.2rem #555;
     transform: skew(-10deg);
 }
 
 .person-img{
-    width: 25rem;
+    width:25rem;
     height: 25rem;
-    object-fit: cover;
-    border-radius:50%;
-    border:.7rem double #e41c6f;
-    padding:0.5rem;  
+    object-fit:cover;
+    border-radius: 50%;
+    border: .7rem dotted #e41c6f;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0.9;
 }
 
 .person-name{
-    font-size: 2rem;
+    font-size:2rem;
     color:#fff;
     background-color: #e41c6f;
-    margin: 5rem 0;
+    margin:5rem 0;
     padding: .5rem 3rem;
     letter-spacing: .3rem;
     transform: skew(-10deg);
@@ -69,46 +72,206 @@ html{
     text-transform: uppercase;
     letter-spacing: .3rem;
 }
+/* section-1 styling ends*/
 
-/*section-1 styling is completed */
-
-/*navbar styling starts*/
- .navbar{
+/* navbar styling starts */
+.navbar{
     width:100%;
     height:4rem;
     background-color: #e41c6f;
-    box-shadow:0.2rem 0.2rem 0.2rem #555;
+    box-shadow: 0.2rem 0.2rem 0.2rem #555;
     display: flex;
     justify-content: center;
     align-items: center;
- }
-
- .navbar-link{
-    font-size:1.8rem;
+}
+.navbar-link{
+    font-size:1.7rem;
     font-weight: 600;
     color:#333;
     margin:0 3rem;
-    letter-spacing: 0.3rem;
     text-transform: uppercase;
-    position:relative;
-    transition: color .2s;
- }
- .navbar-link::before{
+    letter-spacing: 0.3rem;
+    position: relative;
+    transition: color .5s;
+}
+
+.navbar-link:hover{
+    color:#fff;
+}
+
+.navbar-link::before{
     content:"";
     width:0;
     height:0.2rem;
     background-color: #fff;
     position: absolute;
     right:-15%;
-    bottom:-0.3rem;
-    transition: width .2s;
- }
- .navbar-link:hover::before{
+    bottom: -0.3rem;
+    transition: width .5s;
+}
+.navbar-link:hover::before{
     width:130%;
- }
- .navbar-link:hover{
-    color:white;
- }
- 
-/*navbar styling ends*/
+}
 
+
+/* navbar styling ends */
+
+/* section-2 starts */
+.section-2{
+    width:100%;
+    height:100%;
+    padding:15rem 0 10rem 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-2-heading,.section-3-heading{
+    font-size: 5rem;
+    color:#333;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin-bottom:15rem;
+    border-bottom:0.3rem solid #333;
+    text-shadow: .2rem .2rem .2rem #555;
+}
+.progress-bar-wrapper{
+
+}
+
+.progress-bar{
+    width:60rem;
+    height:3rem;
+    background-color: #ccc;
+    margin:1.5rem 0;
+    border-radius: .3rem;
+    box-shadow: .2rem .2rem .2rem #555;
+    position: relative;
+}
+.progress-text{
+    position: absolute;
+    left:1rem;
+    font-size: 1.5rem;
+    color:white;
+}
+.progress-text span{
+    margin:0 .5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.progress-percent{
+    width:90%;
+    height: 100%;
+    background-color: #e41c6f;
+    border-radius: 0.3rem;
+}
+.services{
+    width:100%;
+    height:30vh;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.service{
+  text-align:center;   
+}
+.service i{
+    font-size:10rem;
+    color:#888;
+    margin-bottom:2rem;
+    text-shadow:0.1rem 0.1rem 0.5rem #555;
+}
+.service-heading{
+    font-size: 2rem;
+    color:#fff;
+    background-color: #777;
+    width:25rem;
+    letter-spacing: .3rem;
+    transform:skew(-10deg);
+    box-shadow: .2rem .2rem .2rem #555;
+}
+.service:first-child,
+.service:last-child{
+    align-self: flex-start;
+}
+
+/* section-2 ends */
+
+/* section-3 starts */
+
+.section-3{
+    width: 100%;
+    height: 100%;
+    padding:10rem 0;
+    background-color: #eef;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-wrapper{
+    width:80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+}
+.project{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:1rem;
+    background-color: #fff;
+    box-shadow: .3rem .3rem .3rem #777;
+    position: relative;
+    overflow:hidden;
+}
+.project:hover .project-text{
+    top:5rem;
+}
+.project-text{
+    text-align: center;
+    letter-spacing: 0.1rem;
+    position: absolute;
+    top:-10rem;
+    transition: top 1s;
+}
+.project-name{
+    font-size:3rem;
+    font-weight:700;
+    color:#333;
+    text-transform: capitalize;
+}
+.project-technologies{
+    font-size:1.8rem;
+    color:#e41c6f;
+}
+.project-img{
+    width:40rem;
+    transition: opacity 1s;
+}
+
+.project:hover .project-img{
+    opacity: .2;
+}
+
+.project-link{
+    font-size:2rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: .1rem;
+    border:.3rem solid #e41c6f;
+    padding:0 1rem;
+    background-color: #fff;
+    position: absolute;
+    bottom:-5rem;
+    transition: bottom 1s;
+}
+.project:hover .project-link{
+    bottom:5rem;
+}
+
+
+/* section-3 ends */
