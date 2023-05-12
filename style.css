@@ -83,6 +83,8 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    position:absolute;
+    z-index:300;
 }
 .navbar-link{
     font-size:1.7rem;
@@ -93,6 +95,9 @@ html{
     letter-spacing: 0.3rem;
     position: relative;
     transition: color .5s;
+}
+.change.navbar-link{
+    color:#fff;
 }
 
 .navbar-link:hover{
@@ -109,6 +114,10 @@ html{
     bottom: -0.3rem;
     transition: width .5s;
 }
+.change.navbar-link::before{
+    width: 130%;
+}
+
 .navbar-link:hover::before{
     width:130%;
 }
@@ -116,36 +125,36 @@ html{
 
 /* navbar styling ends */
 
-/* section-2 starts */
+/* section-2 styling starts */
+
 .section-2{
     width:100%;
     height:100%;
     padding:15rem 0 10rem 0;
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
+    display:flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .section-2-heading,.section-3-heading{
-    font-size: 5rem;
+    font-size:5rem;
     color:#333;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
-    margin-bottom:15rem;
-    border-bottom:0.3rem solid #333;
-    text-shadow: .2rem .2rem .2rem #555;
+    margin-bottom: 15rem;
+    border-bottom: .3rem solid #333;
+    text-shadow:.2rem .2rem .2rem #555;
 }
 .progress-bar-wrapper{
-
+    margin-bottom:10rem;
 }
-
 .progress-bar{
     width:60rem;
     height:3rem;
     background-color: #ccc;
     margin:1.5rem 0;
-    border-radius: .3rem;
+    border-radius:.3rem;
     box-shadow: .2rem .2rem .2rem #555;
     position: relative;
 }
@@ -153,56 +162,59 @@ html{
     position: absolute;
     left:1rem;
     font-size: 1.5rem;
-    color:white;
+    color:#fff;
 }
 .progress-text span{
-    margin:0 .5rem;
+    margin: 0 .5rem;
     font-size: 1.8rem;
     font-weight: 700;
 }
 .progress-percent{
-    width:90%;
-    height: 100%;
+    width:0;
+    height:100%;
     background-color: #e41c6f;
-    border-radius: 0.3rem;
+    border-radius: .3rem;
+    transition: width 1s;
 }
+
 .services{
     width:100%;
     height:30vh;
     display:flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items:center;
 }
 .service{
-  text-align:center;   
+    text-align: center;
 }
+
 .service i{
     font-size:10rem;
     color:#888;
     margin-bottom:2rem;
-    text-shadow:0.1rem 0.1rem 0.5rem #555;
+    text-shadow:0.1rem 0.1rem 0.1rem #555;
 }
+
 .service-heading{
     font-size: 2rem;
     color:#fff;
     background-color: #777;
     width:25rem;
     letter-spacing: .3rem;
-    transform:skew(-10deg);
+    transform: skew(-10deg);
     box-shadow: .2rem .2rem .2rem #555;
 }
-.service:first-child,
-.service:last-child{
-    align-self: flex-start;
+.service:first-child,.service:last-child{
+    align-self: flex-end;
 }
 
-/* section-2 ends */
+/* section-2 styling ends */
 
-/* section-3 starts */
+/* section-3 styling starts */
 
 .section-3{
-    width: 100%;
-    height: 100%;
+    width:100%;
+    height:100%;
     padding:10rem 0;
     background-color: #eef;
     display:flex;
@@ -215,8 +227,9 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
+
 .project{
     display:flex;
     flex-direction: column;
@@ -224,23 +237,23 @@ html{
     align-items: center;
     margin:1rem;
     background-color: #fff;
-    box-shadow: .3rem .3rem .3rem #777;
+    box-shadow: .3rem .3em .3rem #777;
     position: relative;
     overflow:hidden;
-}
-.project:hover .project-text{
-    top:5rem;
 }
 .project-text{
     text-align: center;
     letter-spacing: 0.1rem;
     position: absolute;
     top:-10rem;
+}
+.project:hover .project-text{
+    top:5rem;
     transition: top 1s;
 }
 .project-name{
     font-size:3rem;
-    font-weight:700;
+    font-weight: 700;
     color:#333;
     text-transform: capitalize;
 }
@@ -252,26 +265,28 @@ html{
     width:40rem;
     transition: opacity 1s;
 }
-
 .project:hover .project-img{
-    opacity: .2;
+    opacity:.2;
+    
 }
-
 .project-link{
     font-size:2rem;
     font-weight: 500;
-    color: #333;
-    letter-spacing: .1rem;
+    color:#333;
+    letter-spacing: 0.1rem;
     border:.3rem solid #e41c6f;
-    padding:0 1rem;
+    padding: 0 1rem;
     background-color: #fff;
     position: absolute;
     bottom:-5rem;
-    transition: bottom 1s;
 }
 .project:hover .project-link{
     bottom:5rem;
+    transition: bottom 1s;
 }
+/* section-3 styling ends */
 
-
-/* section-3 ends */
+.sticky{
+    position:fixed;
+    top:0;
+}
