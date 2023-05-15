@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout using Flexbox</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            .container{
+                background-color: #555;
+                display:flex;
+                flex-direction: column;
+                width:100%;
+                height:100vh;
+                padding:20px;
+                gap:10px;
+                
+            }
+            .div-1{
+                width:100%;
+                height:20vh;
+                background-color: aqua;
+               
+            }
+            .div-2{
+                width:100%;
+                height:10vh;
+                background-color:pink;
+            }
+            .content-container{
+                display:flex;
+                background-color: #333;
+                height:50vh;
+                column-gap: 10px;
+                flex-direction: row-reverse;
+            }
+            .div-3{
+                flex-basis: 30%;
+                background-color: blueviolet;
+            }
+            .div-4{
+                background-color:bisque;
+                flex-grow:2;
+            }
+            .div-5{
+                background-color: black;
+                color:white;
+                flex-grow: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="div-1">Header</div>
+            <div class="div-2">Navbar</div>
+            <div class="content-container">
+                <div class="div-3">aside</div>
+                <div class="div-4">Main</div>
+            </div>
+            <div class="div-5">Footer</div>
+        </div>
+    </body>
+</html>
